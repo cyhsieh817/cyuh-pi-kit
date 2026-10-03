@@ -13,9 +13,15 @@ Goal: **one pack** clients install so most Pi agent jobs finish without operator
 - [x] AGENTS.client.md deliverable template
 - [x] doctor dual-load check
 
+## Shipped (0.1.1)
+
+- [x] GitHub repo **public** for client subscribe without auth
+- [x] README defaults to HTTPS install (`pi install -l https://github.com/cyhsieh817/cyuh-pi-kit.git`)
+
 ## Next (0.2)
 
-- [ ] Windows-first install notes + scp fallback when `pi install` git auth blocked
+- [ ] Windows-first install notes + MinGit bootstrap when `git` missing
+- [ ] scp fallback when `pi install` cannot reach network
 - [ ] Optional deliverable-guard extension (block short overwrite of long files)
 - [ ] plan-mode (sanitized; no TVW paths)
 - [ ] cache-ttl footer (if useful on client cloud providers)

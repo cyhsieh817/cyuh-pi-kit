@@ -2,28 +2,52 @@
 
 **Client-facing Pi pack.** One install → most day-to-day agent work runs to completion without babysitting.
 
-> Private by default. Portable: no Clotho paths, no herdr/Themis/fleet hooks.
-> Internal full stack stays in **`cyuh-pi-suite`** (not for clients).
+> **Public subscribe pack.** Portable: no operator host paths, no herdr/Themis/fleet hooks, no secrets.
+> Internal full stack stays in private **`cyuh-pi-suite`** (not for clients).
+
+## Requirements
+
+- [Pi](https://github.com/badlogic/pi-mono) / Pi coding-agent on PATH as `pi`
+- **Git** on PATH (`git --version` works). Windows: install [Git for Windows](https://git-scm.com/download/win), then open a **new** terminal.
 
 ## Install (client machine)
 
-```bash
-# SSH (preferred on fleet seats)
-pi install -l git:git@github.com:cyhsieh817/cyuh-pi-kit
+**Recommended (public HTTPS — no GitHub login / SSH key):**
 
-# HTTPS
+```bash
+pi install -l https://github.com/cyhsieh817/cyuh-pi-kit.git
+```
+
+Equivalents:
+
+```bash
+pi install -l git:github.com/cyhsieh817/cyuh-pi-kit
 pi install -l git:https://github.com/cyhsieh817/cyuh-pi-kit.git
 ```
 
-Update:
+SSH (only if the machine already has GitHub SSH set up):
 
 ```bash
-pi update --extension git:git@github.com:cyhsieh817/cyuh-pi-kit
-# or
-node bin/cyuh-pi-kit.mjs update
+pi install -l git:git@github.com:cyhsieh817/cyuh-pi-kit
 ```
 
-After install: **restart Pi** or `/reload`, then:
+User-wide (all projects on this machine) — omit `-l`:
+
+```bash
+pi install https://github.com/cyhsieh817/cyuh-pi-kit.git
+```
+
+### Update
+
+```bash
+pi update
+```
+
+Or re-run the same `pi install …` source after pulling new releases.
+
+### After install
+
+**Restart Pi** or `/reload`, then:
 
 ```text
 /auto-continue status
@@ -85,6 +109,7 @@ node bin/cyuh-pi-kit.mjs where
 | | **cyuh-pi-kit** | **cyuh-pi-suite** |
 |---|---|---|
 | Audience | external clients | Clotho / Lachesis / internal |
+| Visibility | **public** | private |
 | Goal | one pack, most workflows work | full internal automation |
 | Paths | portable | may assume TVW layout |
 | Install | safe default for clients | do not ship wholesale |

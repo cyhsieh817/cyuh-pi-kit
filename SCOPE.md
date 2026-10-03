@@ -4,12 +4,15 @@
 
 **Audience:** external client Pi seats (Windows / macOS / Linux).
 
+**Visibility:** public GitHub repo — clients subscribe with HTTPS, no token required.
+
 **Contract:**
 
 - Installable as one Pi package (`package.json` → `pi.extensions`).
 - No hardcoded operator home paths (`/Users/cyuh/…`).
 - No herdr / Themis durable loop / fleet SSH helpers.
 - No secrets, auth tokens, or model API keys.
+- Safe to publish: review every PR as if competitors will read it.
 - Modules must degrade safely if optional env is missing.
 - Prefer English UI strings for cross-locale clients; Traditional Chinese OK in docs.
 

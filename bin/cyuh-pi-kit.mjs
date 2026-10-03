@@ -10,7 +10,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const PACKAGE_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const DEFAULT_GIT = "git:git@github.com:cyhsieh817/cyuh-pi-kit";
+const DEFAULT_GIT = "https://github.com/cyhsieh817/cyuh-pi-kit.git";
 
 function run(cmd, args) {
 	console.log("+", cmd, args.join(" "));

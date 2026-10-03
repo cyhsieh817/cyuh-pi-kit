@@ -1,8 +1,7 @@
 {
   "name": "@cyuh/pi-kit",
-  "version": "0.1.0",
-  "private": true,
-  "description": "CYuH Pi client kit — one installable pack so most client agent workflows finish without babysitting",
+  "version": "0.1.1",
+  "description": "CYuH Pi client kit — public one-install pack so most client agent workflows finish without babysitting",
   "type": "module",
   "bin": {
     "cyuh-pi-kit": "./bin/cyuh-pi-kit.mjs"
@@ -18,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:cyhsieh817/cyuh-pi-kit.git"
+    "url": "git+https://github.com/cyhsieh817/cyuh-pi-kit.git"
   },
   "keywords": [
     "pi-package",
