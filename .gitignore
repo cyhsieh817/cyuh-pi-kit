@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.log
+_device_local.nosync/
+.pytest_cache/
+coverage/
+dist/
+*.bak.*

@@ -1,0 +1,43 @@
+{
+  "name": "@cyuh/pi-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CYuH Pi client kit — one installable pack so most client agent workflows finish without babysitting",
+  "type": "module",
+  "bin": {
+    "cyuh-pi-kit": "./bin/cyuh-pi-kit.mjs"
+  },
+  "files": [
+    "extensions",
+    "templates",
+    "docs",
+    "bin",
+    "README.md",
+    "SCOPE.md",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:cyhsieh817/cyuh-pi-kit.git"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extensions",
+    "client-kit",
+    "cyuh"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/auto-continue.ts",
+      "./extensions/context-guard.ts",
+      "./extensions/git-checkpoint.ts",
+      "./extensions/handoff.ts",
+      "./extensions/notify-ready.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --test tests/*.mjs",
+    "doctor": "node bin/cyuh-pi-kit.mjs doctor",
+    "where": "node bin/cyuh-pi-kit.mjs where"
+  }
+}
